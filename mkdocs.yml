@@ -1,0 +1,47 @@
+site_name: "mkdocs-section-index"
+site_description: "MkDocs plugin to allow clickable sections that lead to an index page"
+site_url: "https://oprypin.github.io/mkdocs-section-index"
+repo_url: "https://github.com/oprypin/mkdocs-section-index"
+edit_uri: blob/master/docs/
+use_directory_urls: false
+
+theme:
+  name: material
+  features:
+    - content.action.edit
+    - navigation.tabs
+    - toc.integrate
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    primary: teal
+    accent: purple
+
+markdown_extensions:
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.magiclink
+  - pymdownx.saneheaders
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      check_paths: true
+      base_path:
+        - !relative $config_dir
+  - admonition
+  - def_list
+  - toc:
+      permalink: "#"
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  nav:
+    absolute_links: ignore
+
+nav:
+  - section-index: README.md
+  - literate-nav: /mkdocs-literate-nav/
+  - gen-files: /mkdocs-gen-files/
+  - same-dir: /mkdocs-same-dir/
+  - code-validator: /mkdocs-code-validator/
+  - callouts: /markdown-callouts/
