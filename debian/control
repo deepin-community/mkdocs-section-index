@@ -1,15 +1,32 @@
-Source: template-repository
-Section: unknown
+Source: mkdocs-section-index
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Edward Betts <edward@4angle.com>
+Section: python
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-python3,
+               mkdocs,
+               mkdocs-material,
+               pybuild-plugin-pyproject,
+               python3-hatchling,
+               python3-all,
+               python3-mechanicalsoup,
+               python3-pytest <!nocheck>,
+               python3-pytest-golden <!nocheck>,
+               python3-setuptools,
+               python3-testfixtures <!nocheck>
+Rules-Requires-Root: no
+Standards-Version: 4.6.2
+Homepage: https://github.com/oprypin/mkdocs-section-index
+Vcs-Browser: https://salsa.debian.org/python-team/packages/mkdocs-section-index
+Vcs-Git: https://salsa.debian.org/python-team/packages/mkdocs-section-index.git
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: mkdocs-section-index
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Plugin for MkDocs to allow clickable sections that lead to an index page
+ Normally sections in MkDocs cannot be clickable as pages themselves, but this
+ plugin makes that possible.
+ .
+ This plugin requires per-theme overrides (implemented within the plugin), or
+ support from themes themselves.

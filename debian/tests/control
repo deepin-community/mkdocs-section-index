@@ -1,0 +1,9 @@
+Tests: run-tests
+Depends: mkdocs,
+         mkdocs-material,
+         python3-all,
+         python3-mechanicalsoup,
+         python3-pytest,
+         python3-pytest-golden,
+         python3-testfixtures,
+         @

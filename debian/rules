@@ -1,4 +1,11 @@
 #!/usr/bin/make -f
 
+export PYBUILD_NAME=mkdocs-section-index
+export PYBUILD_TEST_PYTEST=1
+
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf mkdocs_section_index.egg-info/
